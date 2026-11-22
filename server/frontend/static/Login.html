@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dealership Login</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark" style="background-color:darkturquoise">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark" href="/">Dealerships</a>
+    </div>
+  </nav>
+  <div class="container mt-5" style="max-width:500px">
+    <h2 class="text-center mb-4">Login</h2>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input id="username" class="form-control" type="text" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input id="password" class="form-control" type="password" required>
+      </div>
+      <button class="btn btn-info w-100" type="submit">Login</button>
+      <p id="message" class="mt-3 text-danger"></p>
+    </form>
+  </div>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const message = document.getElementById("message");
+      try {
+        const response = await fetch("/djangoapp/login", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          credentials: "same-origin",
+          body: JSON.stringify({
+            userName: document.getElementById("username").value,
+            password: document.getElementById("password").value
+          })
+        });
+        const result = await response.json();
+        if (result.status === "Authenticated") {
+          sessionStorage.setItem("username", result.userName);
+          window.location.href = "/";
+        } else {
+          message.textContent = "Login failed. Check your username and password.";
+        }
+      } catch (error) {
+        message.textContent = "Unable to connect to the login service.";
+      }
+    });
+  </script>
+</body>
+</html>

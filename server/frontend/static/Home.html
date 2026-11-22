@@ -52,13 +52,83 @@ let checkSession = ()=>{
   </div>
 </nav>
 <div style="display: flex;flex-direction: column;">
-<div class="card" style="width: 50%;margin-top: 50px;align-self: center;">
-  <img src="static/car_dealership.jpg" class="card-img-top" alt="...">
+<div class="card" style="width: 35%;margin-top: 12px;align-self: center;">
+  <img src="static/car_dealership.jpg" class="card-img-top" style="height: 130px; object-fit: cover;" alt="...">
   <div class="banner">
     <h5>Welcome to our Dealerships!</h5>
     <a href="/dealers" class="btn" style="background-color: aqua;margin:10px">View Dealerships</a>
   </div>
 </div>
 </div>
+
+<div class="container-fluid mt-4 mb-5">
+  <h3 class="text-center mb-3">
+    Available Dealerships ({{ dealers|length }})
+  </h3>
+
+
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <label for="stateFilter" class="form-label">
+        Filter dealerships by State
+      </label>
+      <select id="stateFilter" class="form-select"
+              onchange="filterDealersByState(this.value)">
+        <option value="">All States</option>
+        {% for state in states %}
+        <option value="{{ state }}"
+          {% if selected_state == state %}selected{% endif %}>
+          {{ state }}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Dealer Name</th>
+          <th>City</th>
+          <th>Address</th>
+          <th>Zip</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for dealer in dealers %}
+        <tr>
+          <td>{{ dealer.id }}</td>
+          <td>{{ dealer.full_name }}</td>
+          <td>{{ dealer.city }}</td>
+          <td>{{ dealer.address|default:"—" }}</td>
+          <td>{{ dealer.zip|default:"—" }}</td>
+          <td>{{ dealer.state }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="6" class="text-center">
+            No dealerships available.
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<script>
+function filterDealersByState(state) {
+  if (!state) {
+    window.location.href = "/";
+  } else {
+    window.location.href =
+      "/djangoapp/get_dealers/" + encodeURIComponent(state) + "/";
+  }
+}
+</script>
+
 </body>
 </html>
