@@ -4,22 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>About Us | Best Cars Dealership</title>
+
   <link rel="stylesheet" href="/static/bootstrap.min.css">
   <link rel="stylesheet" href="/static/style.css">
+
   <style>
     body {
       background: #f6f8fb;
       font-family: Arial, sans-serif;
+      margin: 0;
     }
+
     .about-intro {
       text-align: center;
       padding: 55px 20px 25px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
+
     .about-intro h1 {
       color: #12345b;
       font-weight: 700;
     }
+
+    .about-intro h2 {
+      color: #12345b;
+      margin-top: 30px;
+    }
+
+    .about-intro p {
+      line-height: 1.7;
+      color: #444;
+    }
+
     .team-grid {
       display: flex;
       gap: 22px;
@@ -27,133 +46,216 @@
       flex-wrap: wrap;
       padding: 25px;
     }
+
     .team-card {
       width: 300px;
       background: white;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 5px 22px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 22px rgba(0, 0, 0, 0.08);
       text-align: center;
     }
+
     .team-card img {
       width: 100%;
       height: 225px;
       object-fit: cover;
     }
+
     .team-card .details {
       padding: 22px;
     }
+
     .team-card h3 {
       color: #12345b;
       font-size: 23px;
     }
+
     .job-title {
       font-weight: bold;
       color: #1478a8;
     }
+
     .email {
       overflow-wrap: anywhere;
+    }
+
+    .team-description {
+      max-width: 850px;
+      margin: 15px auto 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .about-intro {
+        padding: 35px 15px 20px;
+      }
+
+      .team-grid {
+        padding: 15px;
+      }
+
+      .team-card {
+        width: 100%;
+        max-width: 350px;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-light"
-       style="background-color: darkturquoise; padding: 20px;">
+       style="background-color: darkturquoise; padding: 20px;"
+       aria-label="Main navigation">
+
     <div class="container-fluid">
       <h2>Best Cars Dealership</h2>
+
       <div>
-        <a class="nav-link d-inline-block" href="/">Home</a>
+        <a class="nav-link d-inline-block"
+           href="/">Home</a>
+
         <a class="nav-link d-inline-block active"
-           href="/about">About Us</a>
+           href="/about"
+           aria-current="page">About Us</a>
+
         <a class="nav-link d-inline-block"
            href="/contact">Contact Us</a>
       </div>
     </div>
   </nav>
 
-  <section class="about-intro">
-    <h1>About Us</h1>
+  <main>
+
+    <section class="about-intro">
+      <h1>About Us</h1>
+
+      <p>
+        Welcome to Best Cars Dealership!
+        We help customers find quality vehicles
+        through a transparent and convenient experience.
+      </p>
+
+      <p>
+        Our mission is to provide reliable dealership
+        information, helpful reviews, and excellent
+        customer service.
+      </p>
+
+      <h2>Meet Our Team</h2>
+
+      <p class="team-description">
+        Our dealership team consists of dedicated
+        professionals who work together to provide
+        excellent automotive services. Our agents help
+        customers explore vehicle options, compare
+        dealerships, understand purchasing information,
+        and make informed decisions. Each team member
+        is committed to providing professional guidance,
+        reliable information, and friendly customer support
+        throughout the car-buying experience.
+      </p>
+    </section>
+
+    <section class="team-grid">
+
+      <!-- Team Member 1 -->
+      <div class="team-card">
+        <img
+          src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600"
+          alt="Portrait of Alex Morgan, Chief Executive Officer">
+
+        <div class="details">
+          <h3>Alex Morgan</h3>
+
+          <p class="job-title">
+            Chief Executive Officer
+          </p>
+
+          <p>
+            Alex leads the dealership's overall strategy
+            and focuses on delivering exceptional customer
+            experiences and business growth.
+          </p>
+
+          <p class="email">
+            <a href="mailto:alex@example.com">
+              alex@example.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="team-card">
+        <img
+          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600"
+          alt="Portrait of Daniel Carter, Sales Manager">
+
+        <div class="details">
+          <h3>Daniel Carter</h3>
+
+          <p class="job-title">
+            Sales Manager
+          </p>
+
+          <p>
+            Daniel manages the sales team and helps
+            customers compare vehicles, dealerships,
+            and purchasing options.
+          </p>
+
+          <p class="email">
+            <a href="mailto:daniel@example.com">
+              daniel@example.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="team-card">
+        <img
+          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600"
+          alt="Portrait of Emily Johnson, Customer Support Lead">
+
+        <div class="details">
+          <h3>Emily Johnson</h3>
+
+          <p class="job-title">
+            Customer Support Lead
+          </p>
+
+          <p>
+            Emily supports customers throughout their
+            journey and ensures questions and concerns
+            are handled professionally.
+          </p>
+
+          <p class="email">
+            <a href="mailto:emily@example.com">
+              emily@example.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
     <p>
-      Welcome to Best Cars Dealership!
-      We help customers find quality vehicles
-      through a transparent and convenient experience.
+      &copy; 2026 Best Cars Dealership.
+      All rights reserved.
     </p>
-    <p>
-      Our mission is to provide reliable dealership
-      information, helpful reviews, and excellent
-      customer service.
-    </p>
-    <h2>Meet Our Team</h2>
-  </section>
-
-  <section class="team-grid">
-
-    <div class="team-card">
-      <img
-        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600"
-        alt="Illustrative portrait of a business professional">
-      <div class="details">
-        <h3>Alex Morgan</h3>
-        <p class="job-title">Chief Executive Officer</p>
-        <p>
-          Alex leads the dealership's overall strategy
-          and focuses on delivering exceptional customer
-          experiences and business growth.
-        </p>
-        <p class="email">
-          <a href="mailto:alex@example.com">
-            alex@example.com
-          </a>
-        </p>
-      </div>
-    </div>
-
-    <div class="team-card">
-      <img
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600"
-        alt="Illustrative portrait of a team professional">
-      <div class="details">
-        <h3>Daniel Carter</h3>
-        <p class="job-title">Sales Manager</p>
-        <p>
-          Daniel manages the sales team and helps
-          customers compare vehicles, dealerships,
-          and purchasing options.
-        </p>
-        <p class="email">
-          <a href="mailto:daniel@example.com">
-            daniel@example.com
-          </a>
-        </p>
-      </div>
-    </div>
-
-    <div class="team-card">
-      <img
-        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600"
-        alt="Illustrative portrait of a customer service professional">
-      <div class="details">
-        <h3>Emily Johnson</h3>
-        <p class="job-title">Customer Support Lead</p>
-        <p>
-          Emily supports customers throughout their
-          journey and ensures questions and concerns
-          are handled professionally.
-        </p>
-        <p class="email">
-          <a href="mailto:emily@example.com">
-            emily@example.com
-          </a>
-        </p>
-      </div>
-    </div>
-
-  </section>
-
-  <footer style="text-align:center; padding:25px;">
-    <p>&copy; 2026 Best Cars Dealership.
-       All rights reserved.</p>
   </footer>
+
 </body>
 </html>
