@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Best Cars Dealership</title>
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    body { margin: 0; background: #f5f8fb; color: #193450; font-family: Arial, sans-serif; }
+    .site-nav { background: darkturquoise; padding: 19px 24px; }
+    .site-nav .container-fluid { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    .site-brand { color: #102f4c; font-size: 1.4rem; font-weight: 700; text-decoration: none; }
+    .menu { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+    .menu a { color: #102f4c; text-decoration: none; font-weight: 600; }
+    .menu a:hover, .menu a.active { text-decoration: underline; }
+    .hero { max-width: 1100px; margin: 46px auto 26px; text-align: center; padding: 0 20px; }
+    .hero h1 { font-size: 2.7rem; font-weight: 700; margin-bottom: 12px; }
+    .hero p { color: #526678; font-size: 1.05rem; }
+    .contact-layout { max-width: 1100px; margin: 0 auto 60px; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
+    .contact-photo { width: 100%; height: 100%; min-height: 375px; object-fit: cover; border-radius: 15px; background: #d8edf2; box-shadow: 0 8px 22px rgba(11,49,74,.09); }
+    .contact-card { background: white; padding: 31px; border-radius: 15px; box-shadow: 0 8px 22px rgba(11,49,74,.09); }
+    .contact-card h2 { font-size: 1.55rem; margin-bottom: 25px; }
+    .detail { margin-bottom: 19px; }
+    .detail strong { color: #117b99; display: block; margin-bottom: 4px; }
+    .detail a { overflow-wrap: anywhere; }
+    .smallprint { margin-top: 24px; padding-top: 15px; border-top: 1px solid #e4eaf0; color: #718096; font-size: .84rem; }
+    footer { text-align: center; background: #e6f0f6; padding: 22px; }
+    @media (max-width: 760px) { .contact-layout { grid-template-columns: 1fr; } .contact-photo { height: 290px; min-height: 0; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav navbar navbar-expand-lg navbar-light" aria-label="Main navigation">
+    <div class="container-fluid">
+      <a class="site-brand" href="/">Best Cars Dealership</a>
+      <div class="menu">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a class="active" aria-current="page" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <header class="hero">
+      <h1>Contact Us</h1>
+      <p>Have a question about a vehicle, a dealership, or a review? Our team is here to help.</p>
+    </header>
+    <section class="contact-layout" aria-label="Dealership contact information">
+      <img class="contact-photo" src="/static/contactus.png" alt="Illustration of contacting the Best Cars Dealership support team">
+      <div class="contact-card">
+        <h2>Get in touch</h2>
+        <div class="detail"><strong>Customer support email</strong><a href="mailto:support@example.com">support@example.com</a></div>
+        <div class="detail"><strong>Telephone</strong><a href="tel:+12025550147">+1 (202) 555-0147</a></div>
+        <div class="detail"><strong>Mailing address</strong>123 Example Avenue, Detroit, MI, USA</div>
+        <div class="detail"><strong>Business hours</strong>Monday–Friday: 9:00 AM–6:00 PM</div>
+        <div class="detail"><strong>Website</strong><a href="/">Best Cars Dealership homepage</a></div>
+        <p class="smallprint">Educational demonstration only. The contact details above are examples, not a real business's contact information.</p>
+      </div>
+    </section>
+  </main>
+  <footer>&copy; 2026 Best Cars Dealership — Educational Project</footer>
+</body>
+</html>
